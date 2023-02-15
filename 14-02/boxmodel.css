@@ -1,0 +1,24 @@
+#container {
+    border: 1px solid red;
+    width: 800px;
+    margin: 20px auto;
+    padding-left: 20px;
+    height: 400px;
+}
+h1 {
+    border: 1px solid green;
+    width: 400px;
+    margin: 30px auto;
+    text-align: center;
+}
+h2 {
+    border: 1px solid blue;
+}
+h3 {
+    border: 1px solid cyan;
+    display: inline;
+}
+span {
+    border: 1px solid black;
+    display: block;
+}
