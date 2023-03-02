@@ -21,10 +21,8 @@ body * {
     width: 360px;
     height: 712px;
     margin: 56px auto 0px;
-}
-
-#profile {
     text-align: center;
+    padding: 0 24px; /* 0 é top e bottom e 24px é right e left */
 }
 
 #profile img {
@@ -34,4 +32,35 @@ body * {
 #profile p {
     font-weight: 500px;
     line-height: 24px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* flexibilidade na coluna */
+    gap: 16px; /* espaço entre cada item da lista */
+}
+
+ul li a {
+    border: 1px solid red;
+    display: flex;
+    align-items: center; /* alinhamento na vertical */
+    justify-content: center; /* alinhamento na horizontal */
+    padding: 16px 24px; /* 16px é top e bottom e 24px é right e left */
+
+    background: rgba(255, 255, 255, 0.1); /* 10% de transparência */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* 50% de transparência */
+    border-radius: 8px; /* borda arredondada */
+    backdrop-filter: blur(4px); 
+    /* nem todo navegador aceita o blur */
+    -webkit-backdrop-filter: blur(4px);
+
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+ul li a:hover{
+    background: rgba(255, 255, 255, 0.05); /* muda o fundo quando passa o mouse */
+    border: 1.5px solid white; /* muda a borda quando passa o mouse */
 }
