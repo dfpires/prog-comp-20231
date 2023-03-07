@@ -3,9 +3,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+     /* variável para a cor do texto inicial*/
+     --text-color: white; 
+     /* variável para o fundo da página inicial*/
+     --back-url: url(./assets/bg-mobile.jpg);
+}
 
+.light {
+    /* variável para a cor do texto*/
+    --text-color: black; 
+    /* variável para o fundo da página*/
+    --back-url: url(./assets/bg-mobile-light.jpg);
+}
 body {
-    background: url(./assets/bg-mobile.jpg);
+    background: var(--back-url);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
@@ -13,7 +25,7 @@ body {
 
 body * {
     font-family: 'Inter', sans-serif;
-    color: white;
+    color: var(--text-color);
 }
 
 #container {
@@ -39,6 +51,7 @@ ul {
     display: flex;
     flex-direction: column; /* flexibilidade na coluna */
     gap: 16px; /* espaço entre cada item da lista */
+    padding: 24px 0px;
 }
 
 ul li a {
@@ -63,4 +76,31 @@ ul li a {
 ul li a:hover{
     background: rgba(255, 255, 255, 0.05); /* muda o fundo quando passa o mouse */
     border: 1.5px solid white; /* muda a borda quando passa o mouse */
+}
+
+#social-links{
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 24px 0px; /* 24 é top e botton e 0 é right e left*/
+    font-size: 24px;
+}
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+#social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+    padding: 24px 0px;
+    text-align: center;
+    font-size: 12px;
 }
