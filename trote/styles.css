@@ -8,6 +8,14 @@
      --text-color: white; 
      /* variável para o fundo da página inicial*/
      --back-url: url(./assets/bg-mobile.jpg);
+     /* variável para a borda dos links do fundo preto */
+     --stroke-color: rgba(255, 255, 255, 0.5);
+     /* variável da superfície do link do fundo preto */
+     --surface-color: rgba(255, 255, 255, 0.05);
+      /* variável do mouse da superfície do link do fundo preto */
+     --surface-color-hover: rgba(0, 0, 0, 0.203);
+     /* variável que evidencia os ícones de rede social no fundo preto */
+     --highlight-color: rgba(255, 255, 255, 0.2);
 }
 
 .light {
@@ -15,12 +23,21 @@
     --text-color: black; 
     /* variável para o fundo da página*/
     --back-url: url(./assets/bg-mobile-light.jpg);
+     /* variável para a borda dos links do fundo branco */
+     --stroke-color: rgba(0, 0, 0, 0.5);
+     /* variável da superfície do link do fundo branco */
+     --surface-color: rgba(0, 0, 0, 0.05);
+      /* variável do mouse da superfície do link do fundo branco */
+      --surface-color-hover: rgba(0, 0, 0, 0.02);
+      /* variável que evidencia os ícones de rede social no fundo branco */
+     --highlight-color: rgba(0, 0, 0, 0.1);
 }
 body {
     background: var(--back-url);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+    height: 100vh;
 }
 
 body * {
@@ -55,14 +72,14 @@ ul {
 }
 
 ul li a {
-    border: 1px solid red;
+   
     display: flex;
     align-items: center; /* alinhamento na vertical */
     justify-content: center; /* alinhamento na horizontal */
     padding: 16px 24px; /* 16px é top e bottom e 24px é right e left */
 
-    background: rgba(255, 255, 255, 0.1); /* 10% de transparência */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* 50% de transparência */
+    background: var(--surface-color); /* 10% de transparência */
+    border: 1px solid var(--stroke-color); /* 50% de transparência */
     border-radius: 8px; /* borda arredondada */
     backdrop-filter: blur(4px); 
     /* nem todo navegador aceita o blur */
@@ -74,8 +91,8 @@ ul li a {
 }
 
 ul li a:hover{
-    background: rgba(255, 255, 255, 0.05); /* muda o fundo quando passa o mouse */
-    border: 1.5px solid white; /* muda a borda quando passa o mouse */
+    background: var(--surface-color-hover); /* muda o fundo quando passa o mouse */
+    border: 1.5px solid var(--text-color); /* muda a borda quando passa o mouse */
 }
 
 #social-links{
@@ -96,11 +113,19 @@ ul li a:hover{
 }
 
 #social-links a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--highlight-color);
 }
 
 footer {
     padding: 24px 0px;
     text-align: center;
     font-size: 12px;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white url(./assets/moon-stars.svg) no-repeat center;
+    border: 0;
+    border-radius: 50%;
 }
