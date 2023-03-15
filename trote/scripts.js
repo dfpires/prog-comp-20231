@@ -17,3 +17,12 @@ function trocaSwitch() {
     }
 
 }
+
+function calculaImc(){
+    // recupera os dados do usuário que estão nas caixas de texto
+    let peso = document.getElementById("peso").value
+    let altura = document.getElementById("altura").value
+    // calcula o imc
+    let imc = (peso / (altura * altura))
+    alert(imc.toFixed(2))
+}
