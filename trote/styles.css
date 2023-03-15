@@ -16,6 +16,8 @@
      --surface-color-hover: rgba(0, 0, 0, 0.203);
      /* variável que evidencia os ícones de rede social no fundo preto */
      --highlight-color: rgba(255, 255, 255, 0.2);
+     /* define a imagem do switch */
+     --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .light {
@@ -31,6 +33,9 @@
       --surface-color-hover: rgba(0, 0, 0, 0.02);
       /* variável que evidencia os ícones de rede social no fundo branco */
      --highlight-color: rgba(0, 0, 0, 0.1);
+     --switch-bg-url: url(./assets/moon-stars.svg);
+      /* define a imagem do switch */
+      --switch-bg-url: url(./assets/sun.svg);
 }
 body {
     background: var(--back-url);
@@ -122,10 +127,39 @@ footer {
     font-size: 12px;
 }
 
+#switch {
+  /*  border: 1px solid red; */
+    position: relative;
+    width: 64px;
+    margin: 4px auto
+}
+
 #switch button {
     width: 32px;
     height: 32px;
-    background: white url(./assets/moon-stars.svg) no-repeat center;
+    background: white var(--switch-bg-url) no-repeat center;
     border: 0;
     border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+
+    left: 0; /* vai ficar à esquerda */
+    z-index: 1; /* colocamos o botão em uma camada acima */ 
+    transform: translateY(-50%); /* deslocando no eixo y de 50% para cima*/
+}
+
+/* vai ficar à direita quando tiver a class light */
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+#switch span {
+    border: 1px solid var(--stroke-color);
+    display: block; /* troca de inline para block */
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border-radius: 9999px;
 }
