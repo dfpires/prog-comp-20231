@@ -7,23 +7,35 @@
         <title>Adicional</title>
     </head>
     <body>
+        <h2> Itens adicionais Kit alimentação + suplemento </h2>
         <div id="container">
             <div>
-                <input type="checkbox" id="padrao" /> Conjunto Padrão 
-                <input type="number" id="qtdePadrao"/>
+                <input onclick="verificaChecagem('padrao')" type="checkbox" id="padrao" /> Conjunto Padrão 
+                <input type="number" id="qtdePadrao" disabled="true"/>
             </div>
             <div>
-                <input type="checkbox" id="kit" /> Kit Alimentação 
-                <input type="number" id="qtdeKit"/>
+                <input onclick="verificaChecagem('kit')" type="checkbox" id="kit" /> Kit Alimentação 
+                <input type="number" id="qtdeKit" disabled="true"/>
             </div>
             <div>
-                <input type="checkbox" id="suplemento" /> Suplemento 
-                <input type="number" id="qtdeSuplemento"/>
+                <input onclick="verificaChecagem('suplemento')" type="checkbox" id="suplemento" /> Suplemento 
+                <input type="number" id="qtdeSuplemento" disabled="true"/>
             </div>
             <div>
-                <input type="checkbox" id="arroz" /> Arroz 
-                <input type="number" id="qtdeArroz"/>
+                <input onclick="verificaChecagem('arroz')" type="checkbox" id="arroz" /> Arroz 
+                <input type="number" id="qtdeArroz" disabled="true"/>
+            </div>
+            <div>
+                <button onclick="calcularAdicional()"> 
+                    Calcular Adicional 
+                </button> 
+            </div>
+            <div>
+                <p id="total">
+
+                </p>
             </div>
         </div>
+        <script src="adicional.js"> </script>
     </body>
 </html>
