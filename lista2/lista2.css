@@ -1,0 +1,37 @@
+#container {
+    border: 1px solid black;
+    width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+#divNro1 {
+    /*border: 1px solid red;*/
+    margin-bottom: 20px;
+    text-align: center;
+}
+#divNro2 {
+   /* border: 1px solid green; */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#divOpcao {
+    /* border: 1px solid blue; */
+    text-align: center;
+    margin-bottom: 20px;
+}
+#divBotao {
+    /* border: 1px solid yellow; */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#divResultado {
+    text-align: center;
+    
+}
+
+span {
+    color: red;
+}
