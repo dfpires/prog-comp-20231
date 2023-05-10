@@ -91,7 +91,7 @@ function exe1(){
 function exe2(){
     let preco = 5.0; let qtde = 120; 
     const desconto = 200;
-    let saida = "<table> <tr> <th> Preço </th> <th> Qtde </th> <th> Desconto </th> <th> Lucro </th> </tr>"
+    let saida = "<table border='1'> <tr> <th> Preço </th> <th> Qtde </th> <th> Desconto </th> <th> Lucro </th> </tr>"
     while (preco >= 1){
         lucro = (preco * qtde) - desconto
         saida += `<tr> <td> ${preco} </td> <td> ${qtde} </td> <td> ${desconto} </td> <td> ${lucro} </td> </tr>`
@@ -100,5 +100,5 @@ function exe2(){
 
     }
     saida += "</table>"
-    document.getElementById("saida").innerHTML = saida
+    document.getElementById("tabela").innerHTML = saida
 }
