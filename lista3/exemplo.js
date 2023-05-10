@@ -102,3 +102,28 @@ function exe2(){
     saida += "</table>"
     document.getElementById("tabela").innerHTML = saida
 }
+
+function exe6(){
+    let codigo
+    let valor; let totalVista = 0;
+    let conta = 1; let totalPrazo = 0;
+    while (conta <= 5){
+        codigo = prompt('Informe P ou V').toUpperCase()
+        valor = Number(prompt('Informe valor'))
+        if (codigo == 'P'){
+            totalPrazo += valor
+        }
+        else if (codigo == 'V'){
+            totalVista += valor
+        }
+        else {
+            alert('Código inválido, valor não será considerado')
+            //conta--
+            continue // continua na próxima iteração
+        }
+        conta++
+    }
+    let total = totalVista + totalPrazo
+    let valorParcela = totalPrazo / 3
+    document.getElementById("result6").innerHTML = `Total à vista ${totalVista} Total à prazo ${totalPrazo} Total ${total} Primeira parcela ${valorParcela.toFixed(2)}`
+}
