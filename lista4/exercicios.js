@@ -155,3 +155,89 @@ function exe31(){
     }
     console.log(`Estoque atualizado ${estoque}`)
 }
+
+function exe4(){
+    // entrada de dados
+    let vet = []
+    for(let i=0;i<10;i++){
+        vet[i] = Number(prompt(`Informe o ${i+1}o. elemento`))
+    }
+    // cria um vetor que guarda as posições do número 30
+    let posicoes = []
+    for(let i=0;i<10;i++){
+        if (vet[i] == 30) {
+            posicoes.push(i)
+        }
+    }
+    alert(`Posições aonde o 30 aparecem ${posicoes}`)
+}
+
+function exe5(){
+    let logica = []
+    let linguagem = []
+    let comum = []
+    for(let i=0;i<10;i++){
+        logica[i] = Number(prompt(`Informe o ${i}o. aluno que faz Lógica`))
+    }
+    for(let i=0;i<5;i++){
+        linguagem[i] = Number(prompt(`Informe o ${i}o. aluno que faz Linguagem`))
+    }
+    // vamos verificar a intersecção
+    for(let i=0;i<10;i++){
+        if (linguagem.includes(logica[i])){
+            comum.push(logica[i])
+        }
+    }
+    alert(`Alunos que fazem as duas disciplinas ${comum}`)
+}
+
+function exe6(){
+    let vendas = []
+    let percentuais = []
+    let nomes = []
+    let comissoes = []
+    for(let i=0;i<5;i++){
+        vendas[i] = Number(prompt(`Informe venda do ${i+1} vendedor`))
+        percentuais[i] = Number(prompt(`Informe % do ${i+1} vendedor`))
+        nomes[i] = prompt(`Informe nome do ${i+1} vendedor`)
+        // calcula comissão do vendedor
+        comissoes[i] = (vendas[i] / percentuais[i]) * 100
+    }
+    // fazer cálculos 
+    let total = 0
+    let maior = comissoes[0]; let menor = comissoes[0]
+    for(let i=0;i<5;i++){
+        total = total + vendas[i]
+        if (comissoes[i] > maior){
+            maior = comissoes[i]
+        }
+        if (comissoes[i] < menor){
+            menor = comissoes[i]
+        }
+    }
+    console.log(`Valor total vendido ${total}`)
+    console.log(`Maior valor ${maior} e quem recebe ${nomes[comissoes.indexOf(maior)]}`)
+    console.log(`Menor valor ${menor} e quem recebe ${nomes[comissoes.indexOf(menor)]}`)
+
+}
+
+function codigoAlunoRepetido(){
+    let codigos = []
+    let nomes = []
+    for(let i=0;i<5;i++){
+        let codigo = Number(prompt('Informe um código de aluno'))
+        // codigos tem todos os códigos
+        // código tem o código digitado pelo usuário
+        // includes verifica se código está dentro de códigos
+        while (codigos.includes(codigo)) {
+            codigo = Number(prompt('Código já existe, informe um novo'))
+        }
+        // como o código é novo, agora podemos inserir no vetor
+        codigos[i] = codigo
+        nomes[i] = prompt('Informe um nome de alulno')
+    }
+    console.log(codigos)
+    alert(codigos)
+    console.log(nomes)
+    alert(nomes)
+}
